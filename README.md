@@ -5,3 +5,4 @@
 - Enterprise Architecture
 - PostgreSQL
 - Lombok
+- JPQL
