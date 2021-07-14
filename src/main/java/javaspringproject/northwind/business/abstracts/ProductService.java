@@ -3,6 +3,7 @@ package javaspringproject.northwind.business.abstracts;
 import javaspringproject.northwind.core.utilities.results.DataResult;
 import javaspringproject.northwind.core.utilities.results.Result;
 import javaspringproject.northwind.entities.concretes.Product;
+import javaspringproject.northwind.entities.dtos.ProductWithCategoryDto;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -29,6 +30,8 @@ public interface ProductService {
     DataResult<List<Product>> getByProductNameStartsWith(String productName);
 
     DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
+
+    DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
 
 
 

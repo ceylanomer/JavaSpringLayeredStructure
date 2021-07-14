@@ -4,6 +4,7 @@ import javaspringproject.northwind.business.abstracts.ProductService;
 import javaspringproject.northwind.core.utilities.results.*;
 import javaspringproject.northwind.dataAccess.abstracts.ProductDao;
 import javaspringproject.northwind.entities.concretes.Product;
+import javaspringproject.northwind.entities.dtos.ProductWithCategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -73,6 +74,11 @@ public class ProductManager implements ProductService {
     @Override
     public DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId) {
         return new SuccessDataResult<List<Product>>(productDao.getByNameAndCategory(productName, categoryId));
+    }
+
+    @Override
+    public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
+        return new SuccessDataResult<List<ProductWithCategoryDto>>(productDao.getProductWithCategoryDetails());
     }
 
     @Override
